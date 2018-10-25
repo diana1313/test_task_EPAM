@@ -19,4 +19,3 @@ Feature: Google Search for "automation"
     Examples:
       | searchData | domainName            |
       | automation | testautomationday.com |
-      | automation | techopedia.com        |
