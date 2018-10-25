@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Google Search for ""automation""","Verify content of first link","SUCCESS","2018-10-25T11:26:04.212+03:00[Europe/Helsinki]","0.0","17.81"
+"Google Search for ""automation""","Verify expected domain on search result pages","FAILURE","2018-10-25T11:26:22.022+03:00[Europe/Helsinki]","0.0","13.99"
