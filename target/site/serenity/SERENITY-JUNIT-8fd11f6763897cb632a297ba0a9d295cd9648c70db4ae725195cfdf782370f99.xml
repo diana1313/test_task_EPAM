@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Google Search for &quot;automation&quot;" skipped="0" tests="3" time="41.6" timestamp="2018-10-25 11:58:49"><testcase name="Verify title in content of first link"/><testcase name="Verify expected domain on search result pages"><failure type="java.lang.AssertionError"/><system-err>null&#13;
-steps.serenity.SearchSteps.findDomainInResults(SearchSteps.java:52)&#13;
-steps.definitions.SearchStepdefs.domainIsPresentOnSearchResultsPagesPage(SearchStepdefs.java:37)&#13;
-✽.domain testautomationday.com is present on first five search results pages(src/test/resources/features/google_search.feature:16)&#13;
-</system-err></testcase></testsuite>
