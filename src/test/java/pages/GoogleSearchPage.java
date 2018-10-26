@@ -11,11 +11,14 @@ public class GoogleSearchPage extends PageObject {
 
     @WhenPageOpens
     public void maximiseScreen() {
-        getDriver().manage().window().maximize();
+        getDriver()
+                .manage()
+                .window()
+                .maximize();
     }
 
     @FindBy(id = "lst-ib")
-    WebElementFacade searchInput;
+    private WebElementFacade searchInput;
 
     public WebElementFacade searchInput() {
         return searchInput;

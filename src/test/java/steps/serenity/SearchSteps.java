@@ -8,9 +8,8 @@ import pages.GoogleSearchResultPage;
 import java.util.Optional;
 
 public class SearchSteps {
-    GoogleSearchPage googleSearchPage;
-    GoogleSearchResultPage googleSearchResultPage;
-    int count = 0;
+    private GoogleSearchPage googleSearchPage;
+    private GoogleSearchResultPage googleSearchResultPage;
 
     @Step
     public void openGoogleSearchPage() {
@@ -19,41 +18,45 @@ public class SearchSteps {
 
     @Step
     public void searchFor(String searchData) {
-        googleSearchPage.searchInput().typeAndEnter(searchData);
+        googleSearchPage.searchInput()
+                .typeAndEnter(searchData);
     }
 
     @Step
     public void clickOnFirstLink() {
-        googleSearchResultPage.searchResultsTittles().get(0).click();
+        googleSearchResultPage.searchResultsTittles()
+                .get(0)
+                .click();
     }
 
     @Step
-    public void assertTittle(String searchData) {
-        assert googleSearchResultPage.tittleOfFirstResultPage().getText().toLowerCase().contains(searchData);
+    public boolean checkIfTitleMatch(String searchData) {
+        return googleSearchResultPage.getTitle()
+                .toLowerCase()
+                .contains(searchData);
     }
 
     @Step
-    public void findDomainInResults(String domainName) {
-
-        while (count <= 4) {
+    public boolean checkDomainPresenceInResults(String domainName, int pagesCountToCheck) {
+        int count = 1;
+        while (count < pagesCountToCheck ) {
 
             Optional<WebElementFacade> resultOptional = googleSearchResultPage.searchDomainInResults(domainName);
             if (resultOptional.isPresent()) {
                 System.out.println("Element found");
                 resultOptional.get().isPresent();
-                assert true;
-                return;
+                return true;
             }
 
             googleSearchResultPage.buttonNextPage().click();
             count++;
 
-            if (count > 4) {
-                assert false;
+            if (count > pagesCountToCheck ) {
                 System.out.println("Reached last page");
             }
 
         }
+        return false;
     }
 
 }

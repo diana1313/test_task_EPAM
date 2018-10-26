@@ -3,8 +3,8 @@ Feature: Google Search for "automation"
   Scenario Outline: Verify title in content of first link
     Given open Google Search Page
     When user search for <searchData>
-    And open first link from search results
-    Then tittle on page contains <searchData>
+    Then open first link from search results
+    Then title on page contains <searchData>
 
     Examples:
       | searchData |
@@ -13,9 +13,9 @@ Feature: Google Search for "automation"
   Scenario Outline: Verify expected domain on search result pages
     Given open Google Search Page
     When user search for <searchData>
-    Then domain <domainName> is present on first five search results pages
+    Then domain <domainName> is present on first <pagesCountToCheck> search results pages
 
 
     Examples:
-      | searchData | domainName            |
-      | automation | testautomationday.com |
+      | searchData | domainName            | pagesCountToCheck |
+      | automation | testautomationday.com | 5                 |

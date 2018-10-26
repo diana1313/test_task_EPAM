@@ -9,37 +9,37 @@ import java.util.Optional;
 
 public class GoogleSearchResultPage extends PageObject {
 
-    @FindBy (className = "iUh30")
-    List<WebElementFacade> searchResultsLinks;
+    @FindBy(className = "iUh30")
+    private List<WebElementFacade> searchResultsLinks;
 
-    @FindBy (className = "LC20lb")
-    List<WebElementFacade> searchResultsTittles;
+    @FindBy(className = "LC20lb")
+    private List<WebElementFacade> searchResultsTittles;
 
-    @FindBy (className = "apphub_AppName")
-    WebElementFacade tittleOfFirstResultPage;
+    @FindBy(className = "apphub_AppName")
+    private WebElementFacade titleOfFirstResultPage;
 
-    @FindBy (id = "pnnext")
-    WebElementFacade buttonNextPage;
+    @FindBy(id = "pnnext")
+    private WebElementFacade buttonNextPage;
 
-    public WebElementFacade buttonNextPage(){
+    public WebElementFacade buttonNextPage() {
         return buttonNextPage;
     }
 
-    public Optional<WebElementFacade> searchDomainInResults(String domain)  {
-       for (WebElementFacade domainInResult: searchResultsLinks){
-           if (domainInResult.getText().contains(domain)){
-               return Optional.of(domainInResult);
-           }
-       }
-       return Optional.empty();
+    public Optional<WebElementFacade> searchDomainInResults(String domain) {
+        for (WebElementFacade domainInResult : searchResultsLinks) {
+            if (domainInResult.getText().contains(domain)) {
+                return Optional.of(domainInResult);
+            }
+        }
+        return Optional.empty();
     }
 
-    public List <WebElementFacade> searchResultsTittles () {
+    public List<WebElementFacade> searchResultsTittles() {
         return searchResultsTittles;
     }
 
-    public WebElementFacade tittleOfFirstResultPage () {
-        return tittleOfFirstResultPage;
+    public WebElementFacade titleOfFirstResultPage() {
+        return titleOfFirstResultPage;
     }
 
 }
