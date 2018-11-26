@@ -18,4 +18,4 @@ Feature: Google Search for "automation"
 
     Examples:
       | searchData | domainName            | pagesCountToCheck |
-      | automation | testautomationday.com | 5                 |
+      | automation | automation.com        | 3                 |

@@ -8,6 +8,7 @@ import org.junit.Assert;
 import steps.serenity.SearchSteps;
 
 public class SearchStepDef {
+
     @Steps
     private SearchSteps searchSteps;
 
