@@ -39,7 +39,7 @@ public class SearchSteps {
     @Step
     public boolean checkDomainPresenceInResults(String domainName, int pagesCountToCheck) {
         int count = 1;
-        while (count < pagesCountToCheck ) {
+        while (count < pagesCountToCheck) {
 
             Optional<WebElementFacade> resultOptional = googleSearchResultPage.searchDomainInResults(domainName);
             if (resultOptional.isPresent()) {
@@ -51,7 +51,7 @@ public class SearchSteps {
             googleSearchResultPage.buttonNextPage().click();
             count++;
 
-            if (count > pagesCountToCheck ) {
+            if (count > pagesCountToCheck) {
                 System.out.println("Reached last page");
             }
 

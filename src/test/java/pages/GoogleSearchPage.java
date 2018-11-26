@@ -17,7 +17,7 @@ public class GoogleSearchPage extends PageObject {
                 .maximize();
     }
 
-    @FindBy(id = "lst-ib")
+    @FindBy(name = "q")
     private WebElementFacade searchInput;
 
     public WebElementFacade searchInput() {
