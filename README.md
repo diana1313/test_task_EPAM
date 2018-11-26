@@ -1,4 +1,4 @@
-### Test task EPAM
+### Test Task EPAM
 
 #### To run the test you need to build maven
 ##### 1. It can be done by using IDE. 
