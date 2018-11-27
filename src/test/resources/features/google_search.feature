@@ -19,4 +19,3 @@ Feature: Google Search for "automation"
       | searchData | domainName            | pagesCountToCheck |
       | automation | automation.com        | 3                 |
 
-  
