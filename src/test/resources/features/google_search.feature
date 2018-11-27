@@ -19,3 +19,11 @@ Feature: Google Search for "automation"
       | searchData | domainName            | pagesCountToCheck |
       | automation | automation.com        | 3                 |
 
+    Scenario Outline: Verify expected data with soft assertions
+      When user search for <searchData>
+      And user open result with <domainName>
+      Then present data contain <title>,<author>,<email>,<lastTimeUpdate>
+
+      Examples:
+        | searchData | domainName            |title| author| email| lastTimeUpdate |
+        | automation | thucydides.info       |     |      |      |                |

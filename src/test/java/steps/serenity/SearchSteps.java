@@ -4,12 +4,19 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import pages.GoogleSearchPage;
 import pages.GoogleSearchResultPage;
+import pages.SoftAssertsPage;
 
 import java.util.Optional;
 
 public class SearchSteps {
     private GoogleSearchPage googleSearchPage;
     private GoogleSearchResultPage googleSearchResultPage;
+    private SoftAssertsPage softAssertsPage;
+
+    @Step
+    public void openPageWithDomainName(String domainName){
+        googleSearchResultPage.searchDomainInResults(domainName).get().click();
+    }
 
     @Step
     public void openGoogleSearchPage() {

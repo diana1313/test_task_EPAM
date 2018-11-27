@@ -1,9 +1,12 @@
 package steps.definitions;
 
+import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
+import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 import steps.serenity.SearchSteps;
 
@@ -39,4 +42,15 @@ public class SearchStepDef {
                 searchSteps.checkDomainPresenceInResults(domainName, pagesCountToCheck));
     }
 
+    @And("^user open result with (.*)$")
+    public void userOpenResultWithDomainName(String domainName) {
+        searchSteps.openPageWithDomainName(domainName);
+    }
+
+    @Then("^present data contain (.*),(.*),(.*),(.*)$")
+    public void presentDataContainTitleAuthorEmailLastTimeUpdate() {
+        SoftAssertions multiplyAsserts = new SoftAssertions();
+        multiplyAsserts.assertThat()
+
+    }
 }
