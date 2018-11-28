@@ -21,11 +21,14 @@ Feature: Google Search for "automation"
       | automation | automation.com | 3                 |
 
   @run
-  Scenario Outline: Verify expected data with soft assertions
+  Scenario Outline: Verify expected data with multiply assertions
     When user search for <searchData>
     And user open result with <domainName>
     Then present data contain <title>,<author>,<email>,<lastUpdate>
 
+
     Examples:
       | searchData            | domainName      | title                                               | author              | email                  | lastUpdate |
       | soft asserts serenity | thucydides.info | Soft Asserts using the Serenity BDD Journey Pattern | John Ferguson Smart | john.smart@wakaleo.com | 2016-02-23 |
+
+
