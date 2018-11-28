@@ -5,7 +5,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 import steps.serenity.SearchSteps;
 
@@ -47,12 +46,14 @@ public class SearchStepDef {
     }
 
     @Then("^present data contain (.*),(.*),(.*),(.*)$")
+
     public void presentDataContainTitleAuthorEmailLastTimeUpdate(String title, String author, String email, String time) {
         Assert.assertTrue("Title doesn't contain searched data",
                 searchSteps.checkIfTitleMatch(title));
-        Assert.assertTrue("Name doesn't match required one", searchSteps.getTextOfElement("Name").contains(author));
-        Assert.assertTrue("Email doesn't match required one", searchSteps.getTextOfElement("Email").contains(email));
-        Assert.assertTrue("Time doesn't match required one", searchSteps.getTextOfElement("Time").contains(time));
+        Assert.assertTrue("Name doesn't match required one", searchSteps.checkIfTextOfElementMatch("Name").contains(author));
+        Assert.assertTrue("Email doesn't match required one", searchSteps.checkIfTextOfElementMatch("Email").contains(email));
+        Assert.assertTrue("Time doesn't match required one", searchSteps.checkIfTextOfElementMatch("Time").contains(time));
+
 
     }
 }
