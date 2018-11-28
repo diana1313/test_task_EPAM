@@ -1,4 +1,5 @@
 Feature: Google Search for "automation"
+
   Background:
     Given open Google Search Page
 
@@ -16,14 +17,15 @@ Feature: Google Search for "automation"
     Then domain <domainName> is present on first <pagesCountToCheck> search results pages
 
     Examples:
-      | searchData | domainName            | pagesCountToCheck |
-      | automation | automation.com        | 3                 |
+      | searchData | domainName     | pagesCountToCheck |
+      | automation | automation.com | 3                 |
 
-    Scenario Outline: Verify expected data with soft assertions
-      When user search for <searchData>
-      And user open result with <domainName>
-      Then present data contain <title>,<author>,<email>,<lastTimeUpdate>
+  @run
+  Scenario Outline: Verify expected data with soft assertions
+    When user search for <searchData>
+    And user open result with <domainName>
+    Then present data contain <title>,<author>,<email>,<lastUpdate>
 
-      Examples:
-        | searchData | domainName            |title| author| email| lastTimeUpdate |
-        | automation | thucydides.info       |     |      |      |                |
+    Examples:
+      | searchData            | domainName      | title                                               | author              | email                  | lastUpdate |
+      | soft asserts serenity | thucydides.info | Soft Asserts using the Serenity BDD Journey Pattern | John Ferguson Smart | john.smart@wakaleo.com | 2016-02-23 |

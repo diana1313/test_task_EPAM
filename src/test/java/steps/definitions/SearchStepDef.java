@@ -1,6 +1,5 @@
 package steps.definitions;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -48,9 +47,12 @@ public class SearchStepDef {
     }
 
     @Then("^present data contain (.*),(.*),(.*),(.*)$")
-    public void presentDataContainTitleAuthorEmailLastTimeUpdate() {
-//        SoftAssertions multiplyAsserts = new SoftAssertions();
-//        multiplyAsserts.assertThat()
+    public void presentDataContainTitleAuthorEmailLastTimeUpdate(String title, String author, String email, String time) {
+        Assert.assertTrue("Title doesn't contain searched data",
+                searchSteps.checkIfTitleMatch(title));
+        Assert.assertTrue("Name doesn't match required one", searchSteps.getTextOfElement("Name").contains(author));
+        Assert.assertTrue("Email doesn't match required one", searchSteps.getTextOfElement("Email").contains(email));
+        Assert.assertTrue("Time doesn't match required one", searchSteps.getTextOfElement("Time").contains(time));
 
     }
 }

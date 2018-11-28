@@ -14,8 +14,19 @@ public class SearchSteps {
     private SoftAssertsPage softAssertsPage;
 
     @Step
-    public void openPageWithDomainName(String domainName){
+    public void openPageWithDomainName(String domainName) {
         googleSearchResultPage.searchDomainInResults(domainName).get().click();
+    }
+
+    @Step
+    public String checkIfTextOfElementMatch(String element) {
+        if (element.toLowerCase().contains("email"))
+            return softAssertsPage.authorEmail().getText();
+        if (element.toLowerCase().contains("name"))
+            return softAssertsPage.authorName().getText();
+        if (element.toLowerCase().contains("time"))
+            return softAssertsPage.lastUpdateTime().getText();
+        else return "no such element";
     }
 
     @Step
@@ -40,7 +51,7 @@ public class SearchSteps {
     public boolean checkIfTitleMatch(String searchData) {
         return googleSearchResultPage.getTitle()
                 .toLowerCase()
-                .contains(searchData);
+                .contains(searchData.toLowerCase());
     }
 
     @Step
