@@ -5,6 +5,6 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features = "src/test/resources/features")
-public class Test {
+@CucumberOptions(features = "src/test/resources/features/UI")
+public class UITest {
 }
