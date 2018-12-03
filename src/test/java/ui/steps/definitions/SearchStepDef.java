@@ -1,4 +1,4 @@
-package steps.definitions;
+package ui.steps.definitions;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -6,7 +6,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
-import steps.serenity.SearchSteps;
+import ui.steps.serenity.SearchSteps;
 
 public class SearchStepDef {
 

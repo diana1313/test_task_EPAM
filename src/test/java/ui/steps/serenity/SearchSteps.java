@@ -1,10 +1,10 @@
-package steps.serenity;
+package ui.steps.serenity;
 
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
-import pages.GoogleSearchPage;
-import pages.GoogleSearchResultPage;
-import pages.SoftAssertsPage;
+import ui.pages.GoogleSearchPage;
+import ui.pages.GoogleSearchResultPage;
+import ui.pages.SoftAssertsPage;
 
 import java.util.Optional;
 
