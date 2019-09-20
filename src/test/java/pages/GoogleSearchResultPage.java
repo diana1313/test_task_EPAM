@@ -25,7 +25,7 @@ public class GoogleSearchResultPage extends PageObject {
         return buttonNextPage;
     }
 
-    public Optional<WebElementFacade> searchDomainInResults(String domain) {
+    public Optional<WebElementFacade> getSearchDomainInResults(String domain) {
         for (WebElementFacade domainInResult : searchResultsLinks) {
             if (domainInResult.getText().contains(domain)) {
                 return Optional.of(domainInResult);
@@ -34,11 +34,11 @@ public class GoogleSearchResultPage extends PageObject {
         return Optional.empty();
     }
 
-    public List<WebElementFacade> searchResultsTittles() {
+    public List<WebElementFacade> getSearchResultsTittles() {
         return searchResultsTittles;
     }
 
-    public WebElementFacade titleOfFirstResultPage() {
+    public WebElementFacade getTitleOfFirstResultPage() {
         return titleOfFirstResultPage;
     }
 

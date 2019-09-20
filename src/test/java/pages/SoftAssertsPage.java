@@ -15,15 +15,15 @@ public class SoftAssertsPage extends PageObject {
     @FindBy(id = "footer-text")
     private WebElementFacade lastUpdateTime;
 
-    public WebElementFacade lastUpdateTime() {
+    public WebElementFacade getLastUpdateTime() {
         return lastUpdateTime;
     }
 
-    public WebElementFacade authorEmail() {
+    public WebElementFacade getAuthorEmail() {
         return authorEmail;
     }
 
-    public WebElementFacade authorName() {
+    public WebElementFacade getAuthorName() {
         return authorName;
     }
 
