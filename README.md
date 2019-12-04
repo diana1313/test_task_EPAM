@@ -5,6 +5,6 @@
 ##### 1. Can be done by using IDE. 
 In the Maven Projects tool window, click Lifecycle to open a list of Maven goals. 
 Select "clean" and "verify" and run the maven build
-##### 2. Can be done by simply a comand line:
+##### 2. Can be done by using a comand line:
 > mvn clean verify
 #### After test run the report (index.html) will be generated in folder target/site/serenity.   
